@@ -1,0 +1,23 @@
+
+import java.util.Scanner;
+
+public class MenuVendedor {
+
+    public static void verMenuVendedor(Scanner teclado) {
+        boolean menuVen = true;
+        while (menuVen) {
+
+            System.out.println("""
+                    ==========================================
+                    =              MENU VENDEDOR             =
+                    ==========================================
+                     1. Ventas
+                     2. Consultar Producto.
+                     3. Cerrar Sesion.
+                    """);
+            System.out.println("Digite opcion");
+            int opcion = teclado.nextInt();
+            teclado.nextLine();
+        }
+    }
+}

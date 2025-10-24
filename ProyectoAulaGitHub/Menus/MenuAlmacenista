@@ -1,0 +1,83 @@
+import java.util.Scanner;
+
+
+public class MenuAlmacenista {
+    public static void verMenuAlmacenista(Scanner teclado) {
+        boolean menuAlm = true;
+        while (menuAlm) {
+
+            System.out.println("""
+                    ==========================================
+                    =            MENU ALMACENISTA            =
+                    ==========================================
+                    1. Entrada de mercancia a bodega.
+                    2. Traslado de mercancia al mostrador.
+                    3. Consultar Productos.
+                    4. Cerrar Sesion.
+                    __________________________________________
+                    """);
+            System.out.println("Digite opcion");
+            int opcion = teclado.nextInt();
+            teclado.nextLine();
+            switch (opcion) {
+                case 1:
+                    System.out.println("""
+                               ========================================
+                               =     SUBMENU CONSULTAR PRODUCTOS      =
+                               ========================================
+                               1. Consultar mercancia en bodega.
+                               2. Consultar mercancia en mostrador.
+                               3. consultar producto.
+                               4. Salida.
+                            _________________________________________
+                                     """);
+                    break;
+
+                case 2:
+                    System.out.println("""
+                            =========================================
+                            =       SUBMENU GESTION DE PRODUCTO     =
+                            =========================================
+                                  1. Crear producto.
+                                  2. Modificar producto.
+                                  3. Eliminar producto.
+                                  4. Salida.
+                                  """);
+                    break;
+
+                case 3:
+                    System.out.println("""
+                            =========================================
+                            =       SUBMENU CONSULTAR PRODUCTO      =
+                            =========================================
+                                   1. Consultar mercancia en bodega.
+                                   2. Consultar mercancia en mostrador.
+                                   3. consultar producto.
+                                   4. Salida.
+                                  """);
+                    break;
+
+                case 4:
+                    System.out.println("""
+                            =========================================
+                            = SUBMENU ENTRADA Y SALIDA DE PRODUCTOS =
+                            =========================================
+                                  1. Entrada de mercancia a bodega.
+                                  2. Traslado de mercancia al mostrador.
+                                  3. Ventas.
+                                  4. Salida.
+                                  """);
+                    break;
+
+                case 5:
+                    System.out.println("Cerrar seccion");
+                    menuAlm = false;
+                    break;
+                default:
+                    System.out.println("Opcion no valida");
+                    break;
+            }
+
+        }
+    }
+}

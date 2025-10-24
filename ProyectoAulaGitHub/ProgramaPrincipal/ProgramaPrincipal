@@ -1,0 +1,53 @@
+import java.util.Scanner;
+
+////////////////////////////////////////////////////////////////////////////////
+//                             PROGRAMA PRINCIPAL                             //
+////////////////////////////////////////////////////////////////////////////////
+String{[][] productos ={'1001','AGUILA CJ X 30 UND',30,2000,600,150,90,60},{'1002','AGUILA SIX PACK',1,15000,100,30,10,5}{'1003','POKER CJ X 30 UND',30,1800,450,150,90,60}};
+String[][] usuarios={{'IVER','2025','IVER MAURICIO DIAZ','ADMINISTRADOR'},{'PEDRO','2026','PEDRO PARDO HERRERA','ALMACENISTA'},{'LUIS','2027','LUIS ALFREDO VARGAS','VENDEDOR'},{'MILENA','2027','MILENA CADENA MARTINEZ','VENDEDOR'}}
+
+public class ProgramaPrincipal {
+    public static void main(String[] args) {
+        boolean activo = true;
+        Scanner teclado = new Scanner(System.in);
+
+        while (activo) {
+            System.out.println("""
+                    ================================================================
+                    =  ******* SISTEMA DE CONTROL PUNTO FRIO LA PRINCIPAL *******  =
+                    =          ---------- CONTROL DE ACCESO  ------------          =                            =
+                    ================================================================
+                    """);
+
+            System.out.println("Digite usuario:");
+            String usuario = teclado.nextLine();
+            String usuarioMayuscula = usuario.toUpperCase();
+
+            System.out.println("Digite Contraseña:");
+            int contrasena = teclado.nextInt();
+            teclado.nextLine();
+
+            System.out.println("Digite Rol:");
+            String rol = teclado.nextLine();
+            String rolMayuscula = rol.toUpperCase();
+
+            switch (rolMayuscula) {
+                case "ADMINISTRADOR":
+                    MenuAdministrador.verMenuAdministrador(teclado);
+                    break;
+
+                case "ALMACENISTA":
+                    MenuAlmacenista.verMenuAlmacenista(teclado);
+                    break;
+
+                case "VENDEDOR":
+                    MenuVendedor.verMenuVendedor(teclado);
+                    break;
+
+                default:
+                    break;
+            }
+
+        }
+    }
+}
